@@ -20,6 +20,10 @@ const serviceRoutes = require("./modules/services/route");
 const server = express();
 server.use(
   cors({
+    origin:
+      process.env.NODE_ENV === "production"
+        ? "https://autofix-git-master-ek4ms-projects.vercel.app"
+        : "http://localhost:3000",
     credentials: true,
   }),
 );
