@@ -1,3 +1,4 @@
+const seed = require("../../seed");
 const sequelize = require("./config");
 
 async function initDb() {
@@ -7,7 +8,7 @@ async function initDb() {
     await sequelize.sync({
       alter: true,
     });
-
+    await seed();
     console.log("Database connected");
   } catch (error) {
     console.error(error);

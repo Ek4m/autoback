@@ -1,0 +1,430 @@
+[
+  {
+    "id": 1,
+    "name": "Mühərrik və Əsas Mexanika",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.124Z",
+    "updatedAt": "2026-05-31T09:27:10.936Z",
+    "subcategories": [
+      {
+        "id": 2,
+        "name": "Mühərrik təmiri və diaqnostika",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.130Z",
+        "updatedAt": "2026-05-31T09:27:10.943Z"
+      },
+      {
+        "id": 3,
+        "name": "Transmissiya (Avtomat / Mexaniki)",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.133Z",
+        "updatedAt": "2026-05-31T09:27:10.945Z"
+      },
+      {
+        "id": 4,
+        "name": "Mufta (Debriyaj)",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.135Z",
+        "updatedAt": "2026-05-31T09:27:10.947Z"
+      },
+      {
+        "id": 5,
+        "name": "Zamanlama kəməri / zənciri",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.136Z",
+        "updatedAt": "2026-05-31T09:27:10.948Z"
+      },
+      {
+        "id": 6,
+        "name": "Yanacaq sistemi (forsunkalar, nasos, filtr)",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.138Z",
+        "updatedAt": "2026-05-31T09:27:10.949Z"
+      },
+      {
+        "id": 7,
+        "name": "Soyutma sistemi (radiator, termostat)",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.140Z",
+        "updatedAt": "2026-05-31T09:27:10.950Z"
+      },
+      {
+        "id": 8,
+        "name": "Egzoz sistemi",
+        "parentId": 1,
+        "createdAt": "2026-04-29T17:43:47.141Z",
+        "updatedAt": "2026-05-31T09:27:10.951Z"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Elektrik və Elektronika",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.143Z",
+    "updatedAt": "2026-05-31T09:27:10.952Z",
+    "subcategories": [
+      {
+        "id": 10,
+        "name": "Akkumulyator və şarj sistemi",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.144Z",
+        "updatedAt": "2026-05-31T09:27:10.955Z"
+      },
+      {
+        "id": 11,
+        "name": "Generator və starter",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.146Z",
+        "updatedAt": "2026-05-31T09:27:10.956Z"
+      },
+      {
+        "id": 12,
+        "name": "Elektrik naqilləri və nasazlıqlar",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.147Z",
+        "updatedAt": "2026-05-31T09:27:10.957Z"
+      },
+      {
+        "id": 13,
+        "name": "ECU / Kompüter diaqnostikası",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.149Z",
+        "updatedAt": "2026-05-31T09:27:10.957Z"
+      },
+      {
+        "id": 14,
+        "name": "Sensorlar (O2, MAF və s.)",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.150Z",
+        "updatedAt": "2026-05-31T09:27:10.958Z"
+      },
+      {
+        "id": 15,
+        "name": "İşıqlandırma sistemi",
+        "parentId": 9,
+        "createdAt": "2026-04-29T17:43:47.151Z",
+        "updatedAt": "2026-05-31T09:27:10.960Z"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Asqı və Sükan sistemi",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.152Z",
+    "updatedAt": "2026-05-31T09:27:10.961Z",
+    "subcategories": [
+      {
+        "id": 17,
+        "name": "Amortizatorlar",
+        "parentId": 16,
+        "createdAt": "2026-04-29T17:43:47.154Z",
+        "updatedAt": "2026-05-31T09:27:10.962Z"
+      },
+      {
+        "id": 18,
+        "name": "Yaylar",
+        "parentId": 16,
+        "createdAt": "2026-04-29T17:43:47.155Z",
+        "updatedAt": "2026-05-31T09:27:10.963Z"
+      },
+      {
+        "id": 19,
+        "name": "Sükan mexanizmi və hidravlika",
+        "parentId": 16,
+        "createdAt": "2026-04-29T17:43:47.156Z",
+        "updatedAt": "2026-05-31T09:27:10.964Z"
+      },
+      {
+        "id": 20,
+        "name": "Təkər bucaqları (razval)",
+        "parentId": 16,
+        "createdAt": "2026-04-29T17:43:47.157Z",
+        "updatedAt": "2026-05-31T09:27:10.965Z"
+      },
+      {
+        "id": 21,
+        "name": "Qollar və buşinqlər",
+        "parentId": 16,
+        "createdAt": "2026-04-29T17:43:47.159Z",
+        "updatedAt": "2026-05-31T09:27:10.965Z"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Əyləc sistemi",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.160Z",
+    "updatedAt": "2026-05-31T09:27:10.966Z",
+    "subcategories": [
+      {
+        "id": 23,
+        "name": "Əyləc bəndləri və disklər",
+        "parentId": 22,
+        "createdAt": "2026-04-29T17:43:47.161Z",
+        "updatedAt": "2026-05-31T09:27:10.966Z"
+      },
+      {
+        "id": 24,
+        "name": "Əyləc mayesi / hava çıxarma",
+        "parentId": 22,
+        "createdAt": "2026-04-29T17:43:47.162Z",
+        "updatedAt": "2026-05-31T09:27:10.967Z"
+      },
+      {
+        "id": 25,
+        "name": "ABS sistemi",
+        "parentId": 22,
+        "createdAt": "2026-04-29T17:43:47.165Z",
+        "updatedAt": "2026-05-31T09:27:10.967Z"
+      },
+      {
+        "id": 26,
+        "name": "Əyləc kaliperləri",
+        "parentId": 22,
+        "createdAt": "2026-04-29T17:43:47.167Z",
+        "updatedAt": "2026-05-31T09:27:10.968Z"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Təkərlər və Şinlər",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.168Z",
+    "updatedAt": "2026-05-31T09:27:10.969Z",
+    "subcategories": [
+      {
+        "id": 28,
+        "name": "Şin dəyişimi",
+        "parentId": 27,
+        "createdAt": "2026-04-29T17:43:47.169Z",
+        "updatedAt": "2026-05-31T09:27:10.970Z"
+      },
+      {
+        "id": 29,
+        "name": "Şin təmiri (deşilmə)",
+        "parentId": 27,
+        "createdAt": "2026-04-29T17:43:47.171Z",
+        "updatedAt": "2026-05-31T09:27:10.971Z"
+      },
+      {
+        "id": 30,
+        "name": "Balanslama",
+        "parentId": 27,
+        "createdAt": "2026-04-29T17:43:47.172Z",
+        "updatedAt": "2026-05-31T09:27:10.972Z"
+      },
+      {
+        "id": 31,
+        "name": "Təkər bucaqlarının tənzimlənməsi",
+        "parentId": 27,
+        "createdAt": "2026-04-29T17:43:47.173Z",
+        "updatedAt": "2026-05-31T09:27:10.973Z"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Kondisioner və İstilik (HVAC)",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.174Z",
+    "updatedAt": "2026-05-31T09:27:10.973Z",
+    "subcategories": [
+      {
+        "id": 33,
+        "name": "Kondisioner (AC)",
+        "parentId": 32,
+        "createdAt": "2026-04-29T17:43:47.176Z",
+        "updatedAt": "2026-05-31T09:27:10.974Z"
+      },
+      {
+        "id": 34,
+        "name": "İstilik sistemi",
+        "parentId": 32,
+        "createdAt": "2026-04-29T17:43:47.177Z",
+        "updatedAt": "2026-05-31T09:27:10.975Z"
+      },
+      {
+        "id": 35,
+        "name": "Salon filtri",
+        "parentId": 32,
+        "createdAt": "2026-04-29T17:43:47.178Z",
+        "updatedAt": "2026-05-31T09:27:10.975Z"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Kuzov və Xarici hissələr",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.181Z",
+    "updatedAt": "2026-05-31T09:27:10.976Z",
+    "subcategories": [
+      {
+        "id": 37,
+        "name": "Kuzov təmiri (əzilmə, qəza)",
+        "parentId": 36,
+        "createdAt": "2026-04-29T17:43:47.182Z",
+        "updatedAt": "2026-05-31T09:27:10.977Z"
+      },
+      {
+        "id": 38,
+        "name": "Rəngləmə",
+        "parentId": 36,
+        "createdAt": "2026-04-29T17:43:47.184Z",
+        "updatedAt": "2026-05-31T09:27:10.977Z"
+      },
+      {
+        "id": 39,
+        "name": "Şüşələr (ön şüşə və s.)",
+        "parentId": 36,
+        "createdAt": "2026-04-29T17:43:47.185Z",
+        "updatedAt": "2026-05-31T09:27:10.978Z"
+      },
+      {
+        "id": 40,
+        "name": "Güzgülər və digər hissələr",
+        "parentId": 36,
+        "createdAt": "2026-04-29T17:43:47.186Z",
+        "updatedAt": "2026-05-31T09:27:10.979Z"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Salon və Komfort",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.187Z",
+    "updatedAt": "2026-05-31T09:27:10.980Z",
+    "subcategories": [
+      {
+        "id": 42,
+        "name": "Oturacaqlar və üzlüklər",
+        "parentId": 41,
+        "createdAt": "2026-04-29T17:43:47.188Z",
+        "updatedAt": "2026-05-31T09:27:10.981Z"
+      },
+      {
+        "id": 43,
+        "name": "Panel və daxili hissələr",
+        "parentId": 41,
+        "createdAt": "2026-04-29T17:43:47.189Z",
+        "updatedAt": "2026-05-31T09:27:10.982Z"
+      },
+      {
+        "id": 44,
+        "name": "Multimedia sistemi",
+        "parentId": 41,
+        "createdAt": "2026-04-29T17:43:47.190Z",
+        "updatedAt": "2026-05-31T09:27:10.982Z"
+      },
+      {
+        "id": 45,
+        "name": "Şüşəqaldıran və qapı kilidləri",
+        "parentId": 41,
+        "createdAt": "2026-04-29T17:43:47.191Z",
+        "updatedAt": "2026-05-31T09:27:10.983Z"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Texniki xidmət",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.192Z",
+    "updatedAt": "2026-05-31T09:27:10.983Z",
+    "subcategories": [
+      {
+        "id": 47,
+        "name": "Yağ dəyişimi",
+        "parentId": 46,
+        "createdAt": "2026-04-29T17:43:47.197Z",
+        "updatedAt": "2026-05-31T09:27:10.984Z"
+      },
+      {
+        "id": 48,
+        "name": "Filtrlərin dəyişimi",
+        "parentId": 46,
+        "createdAt": "2026-04-29T17:43:47.198Z",
+        "updatedAt": "2026-05-31T09:27:10.985Z"
+      },
+      {
+        "id": 49,
+        "name": "Şamlar (spark plugs)",
+        "parentId": 46,
+        "createdAt": "2026-04-29T17:43:47.199Z",
+        "updatedAt": "2026-05-31T09:27:10.986Z"
+      },
+      {
+        "id": 50,
+        "name": "Planlı texniki baxış",
+        "parentId": 46,
+        "createdAt": "2026-04-29T17:43:47.201Z",
+        "updatedAt": "2026-05-31T09:27:10.986Z"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Diaqnostika və Yoxlama",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.203Z",
+    "updatedAt": "2026-05-31T09:27:10.987Z",
+    "subcategories": [
+      {
+        "id": 52,
+        "name": "Ümumi diaqnostika",
+        "parentId": 51,
+        "createdAt": "2026-04-29T17:43:47.204Z",
+        "updatedAt": "2026-05-31T09:27:10.988Z"
+      },
+      {
+        "id": 53,
+        "name": "Alışdan əvvəl yoxlama",
+        "parentId": 51,
+        "createdAt": "2026-04-29T17:43:47.205Z",
+        "updatedAt": "2026-05-31T09:27:10.989Z"
+      },
+      {
+        "id": 54,
+        "name": "Emissiya testi",
+        "parentId": 51,
+        "createdAt": "2026-04-29T17:43:47.206Z",
+        "updatedAt": "2026-05-31T09:27:10.990Z"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Transmissiya və Ötürücü sistem",
+    "parentId": null,
+    "createdAt": "2026-04-29T17:43:47.207Z",
+    "updatedAt": "2026-05-31T09:27:10.991Z",
+    "subcategories": [
+      {
+        "id": 56,
+        "name": "Kardan valı",
+        "parentId": 55,
+        "createdAt": "2026-04-29T17:43:47.209Z",
+        "updatedAt": "2026-05-31T09:27:10.992Z"
+      },
+      {
+        "id": 57,
+        "name": "Differensial",
+        "parentId": 55,
+        "createdAt": "2026-04-29T17:43:47.210Z",
+        "updatedAt": "2026-05-31T09:27:10.992Z"
+      },
+      {
+        "id": 58,
+        "name": "Akslar / CV birləşmələri",
+        "parentId": 55,
+        "createdAt": "2026-04-29T17:43:47.211Z",
+        "updatedAt": "2026-05-31T09:27:10.993Z"
+      }
+    ]
+  }
+]
