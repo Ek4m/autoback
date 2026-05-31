@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
 
-export class MechanicReview extends Model {}
+class MechanicReview extends Model {}
 MechanicReview.init(
   {
     id: {
@@ -20,3 +20,5 @@ MechanicReview.init(
     timestamps: true,
   },
 );
+
+module.exports = MechanicReview;

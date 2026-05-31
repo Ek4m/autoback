@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
 
-export class ContactMessage extends Model {}
+class ContactMessage extends Model {}
 ContactMessage.init(
   {
     id: {
@@ -22,3 +22,5 @@ ContactMessage.init(
     timestamps: true,
   },
 );
+
+module.exports = ContactMessage;

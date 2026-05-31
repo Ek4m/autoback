@@ -1,7 +1,8 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
+const { OFFER_STATUS } = require("../../../modules/problems/constants");
 
-export class Offer extends Model {}
+class Offer extends Model {}
 Offer.init(
   {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -20,3 +21,5 @@ Offer.init(
     timestamps: true,
   },
 );
+
+module.exports = Offer;

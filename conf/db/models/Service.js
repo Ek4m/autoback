@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
 
-export class Service extends Model {}
+class Service extends Model {}
 Service.init(
   {
     id: {
@@ -26,3 +26,5 @@ Service.init(
     timestamps: true,
   },
 );
+
+module.exports = Service;

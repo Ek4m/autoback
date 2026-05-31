@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
 
-export class OfferAgreement extends Model {}
+class OfferAgreement extends Model {}
 OfferAgreement.init(
   {
     id: {
@@ -16,3 +16,4 @@ OfferAgreement.init(
     timestamps: true,
   },
 );
+module.exports = OfferAgreement;

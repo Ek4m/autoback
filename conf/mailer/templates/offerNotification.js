@@ -56,7 +56,7 @@ module.exports = function (
                     font-weight: bold;
                   "
                 >
-                  AutoFix
+                  AvtoFix
                 </h1>
 
                 <p

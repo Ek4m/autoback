@@ -1,7 +1,8 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
+const { EntityType } = require("../../../modules/problems/constants");
 
-export class Upload extends Model {}
+class Upload extends Model {}
 Upload.init(
   {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -15,3 +16,4 @@ Upload.init(
     timestamps: true,
   },
 );
+module.exports = Upload;

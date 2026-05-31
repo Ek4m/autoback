@@ -1,9 +1,8 @@
-import { EntityType } from "../../../modules/problems/constants";
-
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
+const { EntityType } = require("../../../modules/problems/constants");
 
-export class VipInfo extends Model {}
+class VipInfo extends Model {}
 VipInfo.init(
   {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -17,3 +16,5 @@ VipInfo.init(
     timestamps: true,
   },
 );
+
+module.exports = VipInfo;

@@ -1,3 +1,19 @@
+const User = require("./models/User");
+const Problem = require("./models/Problem");
+const Category = require("./models/Category");
+const CarBrand = require("./models/CarBrand");
+const CarModel = require("./models/CarModel");
+
+const ContactMessage = require("./models/ContactMessage");
+const MechanicReview = require("./models/MechanicReview");
+const Offer = require("./models/Offer");
+const OfferAgreement = require("./models/OfferAgreement");
+const Service = require("./models/Service");
+
+const SpecialistInfo = require("./models/SpecialistInfo");
+const Upload = require("./models/Upload");
+const VipInfo = require("./models/VipInfo");
+
 // USER ↔ PROBLEM
 User.hasMany(Problem, { foreignKey: "userId", as: "problems" });
 Problem.belongsTo(User, { foreignKey: "userId", as: "user" });

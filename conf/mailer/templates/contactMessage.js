@@ -6,7 +6,7 @@ module.exports = function (body) {
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>AutoFix Contact Request</title>
+    <title>AvtoFix Contact Request</title>
   </head>
 
   <body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,sans-serif;">
@@ -19,7 +19,7 @@ module.exports = function (body) {
       <div style="padding:24px;color:#111827;">
 
         <p style="margin-top:0;color:#6b7280;">
-          AutoFix platformasından yeni bir istifadəçi mesaj göndərdi.
+          AvtoFix platformasından yeni bir istifadəçi mesaj göndərdi.
         </p>
 
         <div style="margin-top:20px;">
@@ -46,7 +46,7 @@ module.exports = function (body) {
         <hr style="margin:24px 0;border:none;border-top:1px solid #e5e7eb;" />
 
         <p style="font-size:12px;color:#6b7280;">
-          Bu mesaj AutoFix contact form vasitəsilə göndərilmişdir.
+          Bu mesaj AvtoFix contact form vasitəsilə göndərilmişdir.
         </p>
 
       </div>

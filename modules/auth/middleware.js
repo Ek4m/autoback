@@ -10,17 +10,13 @@ const checkAuth = async (req, res, next) => {
         message: "Authentication required",
       });
     }
-
     const decoded = jwt.verify(token, JWT_SECRET);
-    console.log(decoded);
     const user = await User.findByPk(decoded.userId);
-
     if (!user) {
       return res.status(401).json({
         message: "User not found",
       });
     }
-
     req.user = user;
 
     next();
