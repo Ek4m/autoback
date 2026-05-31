@@ -438,6 +438,120 @@ const deleteOffer = async (req, res) => {
   }
 };
 
+const updateService = async (req, res) => {
+  try {
+    const user = req.user;
+    const { id } = req.params;
+
+    const service = await Service.findOne({
+      where: {
+        id,
+        userId: user.id,
+      },
+    });
+
+    if (!service) {
+      return res.status(404).json({
+        message: "Servis tapılmadı",
+      });
+    }
+
+    const body = req.body;
+
+    await service.update(body);
+
+    return res.status(200).json({
+      data: {
+        message: "Servis uğurla dəyişdirildi",
+      },
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Server xətası",
+      error: error.message,
+    });
+  }
+};
+
+const deleteService = async (req, res) => {
+  try {
+    const user = req.user;
+    const { id } = req.params;
+
+    const service = await Service.findOne({
+      where: {
+        id,
+        userId: user.id,
+      },
+    });
+
+    if (!service) {
+      return res.status(404).json({
+        message: "Servis tapılmadı",
+      });
+    }
+
+    await service.destroy();
+
+    return res.status(200).json({
+      message: "Servis silindi",
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Server xətası",
+      error: error.message,
+    });
+  }
+};
+
+const getMechanicServices = async (req, res) => {
+  try {
+    const user = req.user;
+    const specialistInfo = await SpecialistInfo.findOne({
+      where: { userId: user.id },
+    });
+
+    if (!specialistInfo) {
+      return res.status(401).json({});
+    }
+
+    const services = await Service.findAll({
+      where: { userId: user.id },
+      include: [
+        {
+          model: User,
+          as: "user",
+          attributes: ["id", "fullName", "profilePicture"],
+          include: [
+            {
+              model: SpecialistInfo,
+              as: "specialistInfo",
+              attributes: {
+                exclude: ["rawAddress", "locationUrl"],
+              },
+            },
+          ],
+        },
+      ],
+    });
+
+    return res.status(200).json({
+      data: services,
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Server xətası",
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   completeProblem,
   cancelProblem,
@@ -449,4 +563,7 @@ module.exports = {
   getPanelInfo,
   getMechanicOffers,
   deleteOffer,
+  updateService,
+  deleteService,
+  getMechanicServices,
 };

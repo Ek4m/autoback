@@ -14,6 +14,7 @@ const contactRoutes = require("./modules/contact/route");
 const offerRoutes = require("./modules/offer/route");
 const mechanicRoutes = require("./modules/mechanic/route");
 const profileRoutes = require("./modules/profile/route");
+const serviceRoutes = require("./modules/services/route");
 
 const server = express();
 server.use(
@@ -33,6 +34,7 @@ server.use("/mechanic", mechanicRoutes);
 server.use("/upload", checkAuth, uploadRoutes);
 server.use("/offer", checkAuth, offerRoutes);
 server.use("/profile", checkAuth, profileRoutes);
+server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
 
 server.listen(4000, () => {

@@ -10,6 +10,9 @@ const {
   getPanelInfo,
   getMechanicOffers,
   deleteOffer,
+  updateService,
+  deleteService,
+  getMechanicServices,
 } = require("./controller");
 
 Router.put("/problems/:id/complete", completeProblem);
@@ -22,5 +25,8 @@ Router.get("/mechanic/ratings", getMechanicRatings);
 Router.get("/mechanic/panel-info", getPanelInfo);
 Router.get("/mechanic/offers", getMechanicOffers);
 Router.get("/mechanic/offers/:id", deleteOffer);
+Router.put("/mechanic/services/:id", updateService);
+Router.delete("/mechanic/services/:id", deleteService);
+Router.get("/mechanic/services", getMechanicServices);
 
 module.exports = Router;
