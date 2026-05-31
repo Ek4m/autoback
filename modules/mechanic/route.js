@@ -3,11 +3,12 @@ const {
   getContactInfo,
   reviewMechanic,
 } = require("./controller");
+const { checkAuth } = require("../auth/middleware");
 
 const Router = require("express").Router();
 
 Router.get("/details/:id", getMechanicInfo);
-Router.get("/contact-info/:id", getContactInfo);
-Router.post("/rate", reviewMechanic);
+Router.get("/contact-info/:id", checkAuth, getContactInfo);
+Router.post("/rate", checkAuth, reviewMechanic);
 
 module.exports = Router;
