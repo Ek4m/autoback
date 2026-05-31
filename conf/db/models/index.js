@@ -27,6 +27,7 @@ module.exports = {
   OfferAgreement,
   Service,
   SpecialistInfo,
+  MechanicReview,
   Upload,
   VipInfo,
 };
