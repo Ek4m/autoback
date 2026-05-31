@@ -10,6 +10,7 @@ const authRoutes = require("./modules/auth/route");
 const issueRoutes = require("./modules/problems/route");
 const testRoutes = require("./modules/test/route");
 const uploadRoutes = require("./modules/upload/route");
+const contactRoutes = require("./modules/contact/route");
 
 const server = express();
 server.use(
@@ -24,6 +25,7 @@ server.use(express.json());
 server.use(cookieParser());
 server.use("/auth", authRoutes);
 server.use("/issues", issueRoutes);
+server.use("/contact", contactRoutes);
 server.use("/upload", checkAuth, uploadRoutes);
 server.use("/test", testRoutes);
 
