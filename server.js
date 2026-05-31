@@ -37,7 +37,7 @@ server.use("/profile", checkAuth, profileRoutes);
 server.use("/build", buildRoutes);
 server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
-server.use("/healthcheck", (res) => {
+server.use("/healthcheck", (req, res) => {
   res.json({ message: "Everything is fine!" });
 });
 
