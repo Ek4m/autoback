@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
 
-export class SpecialistInfo extends Model {}
+class SpecialistInfo extends Model {}
 SpecialistInfo.init(
   {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -20,3 +20,5 @@ SpecialistInfo.init(
     timestamps: true,
   },
 );
+
+module.exports = SpecialistInfo;

@@ -1,4 +1,4 @@
-import { EntityType } from "../../modules/problems/constants";
+import { EntityType } from "../../../modules/problems/constants";
 
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config");
