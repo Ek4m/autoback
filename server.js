@@ -20,7 +20,6 @@ const serviceRoutes = require("./modules/services/route");
 const server = express();
 server.use(
   cors({
-    origin: "http://localhost:3000",
     credentials: true,
   }),
 );
