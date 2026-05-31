@@ -23,7 +23,7 @@ const uploadFiles = async (req, res) => {
         .toString(36)
         .substring(2)}.${ext}`;
 
-      const filePath = path.join(process.cwd(), "public/uploads", fileName);
+      const filePath = path.join(process.cwd(), "/public/uploads", fileName);
 
       await fs.writeFile(filePath, file.buffer);
 
