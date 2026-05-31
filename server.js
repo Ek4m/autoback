@@ -39,7 +39,7 @@ server.use("/build", buildRoutes);
 server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
 
-server.listen(4000, () => {
+server.listen(process.env.PORT || 4000, () => {
   initDb().then(() => {
     console.log("DB connected");
     console.log("Listening");
