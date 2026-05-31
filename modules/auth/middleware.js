@@ -3,8 +3,10 @@ const User = require("../../conf/db/models/User");
 const { JWT_SECRET, ACCESS_TOKEN } = require("./constants");
 
 const checkAuth = async (req, res, next) => {
+  console.log("__________COOKIES)))))))))))))))))))", req.cookies);
   try {
     let token = req.cookies[ACCESS_TOKEN];
+    console.log("__________COOKIES)))))))))))))))))))", token);
     if (!token) {
       return res.status(401).json({
         message: "Authentication required",
