@@ -12,6 +12,7 @@ const testRoutes = require("./modules/test/route");
 const uploadRoutes = require("./modules/upload/route");
 const contactRoutes = require("./modules/contact/route");
 const offerRoutes = require("./modules/offer/route");
+const buildRoutes = require("./modules/build/route");
 const mechanicRoutes = require("./modules/mechanic/route");
 const profileRoutes = require("./modules/profile/route");
 const serviceRoutes = require("./modules/services/route");
@@ -34,6 +35,7 @@ server.use("/mechanic", mechanicRoutes);
 server.use("/upload", checkAuth, uploadRoutes);
 server.use("/offer", checkAuth, offerRoutes);
 server.use("/profile", checkAuth, profileRoutes);
+server.use("/build", buildRoutes);
 server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
 
