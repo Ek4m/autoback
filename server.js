@@ -37,6 +37,9 @@ server.use("/profile", checkAuth, profileRoutes);
 server.use("/build", buildRoutes);
 server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
+server.use("/healthcheck", (res) => {
+  res.json({ message: "Everything is fine!" });
+});
 
 initDb().then(() => {
   server.listen(process.env.PORT || 4000, () => {
