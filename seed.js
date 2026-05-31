@@ -12,7 +12,7 @@ async function seedCategories() {
 
     console.log("Seeding categories...");
 
-    const filePath = path.join(__dirname, "../data/brands.json");
+    const filePath = path.join(__dirname, "/data/categories.json");
     const categories = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
     for (const category of categories) {
@@ -69,7 +69,7 @@ async function seedCarBrands() {
     console.log("Seeding car brands & models...");
 
     // 2. Load JSON
-    const filePath = path.join(__dirname, "../data/brands.json");
+    const filePath = path.join(__dirname, "/data/brands.json");
     const brands = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
     for (const brand of brands) {

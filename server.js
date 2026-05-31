@@ -39,8 +39,8 @@ server.use("/build", buildRoutes);
 server.use("/services", serviceRoutes);
 server.use("/test", testRoutes);
 
-server.listen(process.env.PORT || 4000, () => {
-  initDb().then(() => {
+initDb().then(() => {
+  server.listen(process.env.PORT || 4000, () => {
     console.log("DB connected");
     console.log("Listening");
   });

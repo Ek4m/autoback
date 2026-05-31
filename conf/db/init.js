@@ -5,9 +5,7 @@ async function initDb() {
   try {
     await sequelize.authenticate();
 
-    await sequelize.sync({
-      alter: true,
-    });
+    await sequelize.sync();
     await seed();
     console.log("Database connected");
   } catch (error) {
