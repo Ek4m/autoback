@@ -1,3 +1,4 @@
+const { fn, col } = require("sequelize");
 const {
   Problem,
   User,
@@ -5,9 +6,12 @@ const {
   CarModel,
   Category,
   SpecialistInfo,
+  MechanicReview,
+  Offer,
+  Service,
 } = require("../../conf/db/models");
 const { comparePassword, hashPassword } = require("../auth/utils");
-const { PROBLEM_STATUS } = require("../problems/constants");
+const { PROBLEM_STATUS, OFFER_STATUS } = require("../problems/constants");
 
 const completeProblem = async (req, res) => {
   try {
@@ -215,10 +219,234 @@ const updateProfile = async (req, res) => {
   }
 };
 
+const becomeMechanic = async (req, res) => {
+  try {
+    const user = req.user;
+    const existingMechanicInfo = await SpecialistInfo.findOne({
+      where: { userId: user.id },
+    });
+
+    if (existingMechanicInfo) {
+      return res.status(400).json({
+        message: "Siz onsuz da usta statusundasınız",
+      });
+    }
+
+    const body = req.body;
+
+    await SpecialistInfo.create({
+      userId: user.id,
+      ...body,
+    });
+
+    return res.json({
+      data: {
+        message: "Usta statusu uğurla əldə edildi",
+      },
+    });
+  } catch (error) {
+    console.error("POST /specialist-info error:", error);
+
+    return res.status(500).json({
+      message: "Server xətası",
+    });
+  }
+};
+
+const getMechanicRatings = async (req, res) => {
+  try {
+    const user = req.user;
+    const mechanicInfo = await SpecialistInfo.findOne({
+      attributes: ["id"],
+      where: { userId: user.id },
+    });
+
+    if (!mechanicInfo) {
+      return res.status(404).json("User not found");
+    }
+
+    const reviews = await MechanicReview.findAll({
+      where: { mechanicId: user.id },
+      include: [
+        {
+          model: User,
+          as: "reviewer",
+          attributes: ["fullName"],
+        },
+        {
+          model: Problem,
+          as: "problem",
+        },
+      ],
+    });
+
+    return res.json({
+      data: reviews,
+    });
+  } catch (error) {
+    console.error("GET /mechanic/reviews error:", error);
+
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
+
+const getPanelInfo = async (req, res) => {
+  try {
+    const user = req.user;
+    const specialistInfo = await SpecialistInfo.findOne({
+      where: { userId: user.id },
+    });
+
+    if (!specialistInfo) {
+      return res.status(401).json({});
+    }
+
+    const allOffersCount = await Offer.count({
+      where: {
+        userId: user.id,
+      },
+    });
+
+    const acceptedOfferCount = await Offer.count({
+      where: {
+        userId: user.id,
+        status: OFFER_STATUS.ACCEPTED,
+      },
+    });
+
+    const servicesCount = await Service.count({
+      where: {
+        userId: user.id,
+      },
+    });
+
+    const services = await Service.findAll({
+      where: {
+        userId: user.id,
+      },
+      limit: 3,
+      order: [["createdAt", "DESC"]],
+    });
+
+    const offers = await Offer.findAll({
+      where: {
+        userId: user.id,
+      },
+      limit: 3,
+      order: [["createdAt", "DESC"]],
+    });
+
+    const reviewsStats = await MechanicReview.findOne({
+      where: {
+        mechanicId: user.id,
+      },
+      attributes: [
+        [
+          fn("COALESCE", fn("ROUND", fn("AVG", col("rating")), 1), 0),
+          "avgRating",
+        ],
+        [fn("COUNT", col("id")), "reviewsCount"],
+      ],
+      raw: true,
+    });
+
+    return res.json({
+      data: {
+        offerCounts: {
+          allOffersCount,
+          acceptedOfferCount,
+        },
+
+        servicesCount,
+
+        rating: {
+          avgRating: reviewsStats?.avgRating,
+          reviewsCount: reviewsStats?.reviewsCount,
+        },
+
+        services,
+
+        offers,
+      },
+    });
+  } catch (error) {
+    console.error("GET /mechanic/dashboard error:", error);
+
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
+
+const getMechanicOffers = async (req, res) => {
+  try {
+    const user = req.user;
+
+    const offers = await Offer.findAll({
+      where: {
+        userId: user.id,
+      },
+      include: [
+        {
+          model: Problem,
+          as: "problem",
+        },
+      ],
+    });
+
+    return res.json({
+      data: offers,
+    });
+  } catch (error) {
+    console.error("GET /offers error:", error);
+
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
+
+const deleteOffer = async (req, res) => {
+  try {
+    const user = req.user;
+    const { id } = req.params;
+    const offer = await Offer.findOne({
+      where: {
+        id,
+        userId: user.id,
+      },
+    });
+    if (!offer) {
+      return res.status(404).json({
+        message: "Təklif tapılmadı",
+      });
+    }
+    await offer.destroy();
+    return res.status(200).json({
+      data: {
+        message: "Təklif silindi",
+      },
+    });
+  } catch (error) {
+    console.error("DELETE /offers/:id error:", error);
+
+    return res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
+
 module.exports = {
   completeProblem,
   cancelProblem,
   getUsersProblems,
   updatePassword,
+  getMechanicRatings,
   updateProfile,
+  becomeMechanic,
+  getPanelInfo,
+  getMechanicOffers,
+  deleteOffer,
 };
