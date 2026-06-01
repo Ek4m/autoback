@@ -125,7 +125,6 @@ const createProblem = async (req, res) => {
 };
 
 const getProblemInfo = async (req, res) => {
-  console.log("___________________________________________");
   try {
     const { id } = req.params;
 

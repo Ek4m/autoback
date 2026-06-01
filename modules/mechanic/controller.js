@@ -1,4 +1,4 @@
-const { fn, col } = require("sequelize");
+const { fn, col, literal } = require("sequelize");
 const {
   User,
   SpecialistInfo,
@@ -172,4 +172,54 @@ const reviewMechanic = async (req, res) => {
   }
 };
 
-module.exports = { getMechanicInfo, getContactInfo, reviewMechanic };
+const getAllMechanics = async (req, res) => {
+  try {
+    const mechanics = await User.findAll({
+      attributes: {
+        exclude: ["password", "phoneNumber", "email", "role"],
+        include: [
+          [
+            literal(`COALESCE(AVG("receivedReviews"."rating"), 0)::float`),
+            "avgRating",
+          ],
+          [fn("COUNT", col("receivedReviews.id")), "reviewsCount"],
+          [
+            literal(
+              'COALESCE(AVG("receivedReviews"."rating"), 0) * 10 + COUNT("receivedReviews"."id")::float',
+            ),
+            "score",
+          ],
+        ],
+      },
+      include: [
+        {
+          model: SpecialistInfo,
+          as: "specialistInfo",
+          required: true,
+          attributes: { exclude: ["rawAddress", "locationUrl"] },
+        },
+        {
+          model: MechanicReview,
+          as: "receivedReviews",
+          attributes: [],
+          required: false,
+        },
+      ],
+      group: ["User.id", "specialistInfo.id"],
+      order: [[literal("score"), "DESC"]],
+    });
+    return res.json({ data: mechanics });
+  } catch (error) {
+    console.error("GET /mechanics error:", error);
+    return res.status(500).json({
+      message: "Server xətası baş verdi",
+    });
+  }
+};
+
+module.exports = {
+  getMechanicInfo,
+  getContactInfo,
+  reviewMechanic,
+  getAllMechanics,
+};
