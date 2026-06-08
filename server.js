@@ -22,7 +22,7 @@ server.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://autofix-git-master-ek4ms-projects.vercel.app"
+        ? "https://autofix-one.vercel.app"
         : "http://localhost:3000",
     credentials: true,
   }),

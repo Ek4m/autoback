@@ -91,11 +91,7 @@ const register = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    res.clearCookie(ACCESS_TOKEN, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-    });
+    res.clearCookie(ACCESS_TOKEN);
 
     return res.status(200).json({
       data: {
